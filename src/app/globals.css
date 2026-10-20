@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+/* Moon Shop — Design System */
+@theme inline {
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-soft: var(--brand-soft);
+
+  --color-accent: var(--accent);
+  --color-page: var(--page);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-vazirmatn, Tahoma);
+
+  --radius-card: 1.25rem;
+  --radius-control: 0.875rem;
+
+  --shadow-card: 0 4px 24px rgb(39 33 38 / 6%);
+}
+
+:root {
+  color-scheme: light;
+
+  /* Brand colors */
+  --brand: #6b344d;
+  --brand-hover: #52273a;
+  --brand-soft: #f4e9ee;
+  --accent: #bf8695;
+
+  /* Backgrounds */
+  --page: #faf8f5;
+  --surface: #ffffff;
+  --surface-muted: #f2ede8;
+
+  /* Text and borders */
+  --foreground: #272126;
+  --muted: #766d72;
+  --border: #e8e0e3;
+
+  /* Layout */
+  --page-gutter: 1rem;
+  --content-max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  direction: rtl;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page);
+  color: var(--foreground);
+  font-family: var(--font-vazirmatn, Tahoma), Arial, sans-serif;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--foreground);
+}
+
+/* Reusable responsive container */
+.container-shell {
+  width: min(calc(100% - 2 * var(--page-gutter)), var(--content-max-width));
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-gutter: 2rem;
+  }
+}
