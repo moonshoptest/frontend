@@ -7,6 +7,7 @@ import { ProductGrid } from "@/components/products/product-grid";
 import { Icon, type IconName } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { products } from "@/data/products";
+import { ProductSearch } from "@/components/products/product-search";
 
 const categories: {
   title: string;
@@ -185,6 +186,8 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        <ProductSearch />
 
         <section id="featured-products" className="container-shell py-8 sm:py-12">
           <SectionHeading
