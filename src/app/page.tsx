@@ -77,6 +77,8 @@ export default function HomePage() {
           </div>
         </div>
 
+        <ProductSearch />
+
         <section className="container-shell py-5 sm:py-8 lg:py-12">
           <div className="grid overflow-hidden rounded-[1.75rem] bg-brand-soft lg:grid-cols-[1fr_0.95fr] lg:rounded-[2rem]">
             <div className="flex flex-col items-start justify-center p-6 sm:p-10 lg:p-14">
@@ -186,8 +188,6 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-
-        <ProductSearch />
 
         <section id="featured-products" className="container-shell py-8 sm:py-12">
           <SectionHeading

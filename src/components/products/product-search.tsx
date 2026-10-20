@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ProductGrid } from "@/components/products/product-grid";
-import { SectionHeading } from "@/components/ui/section-heading";
+import { Icon } from "@/components/ui/icon";
 import { products } from "@/data/products";
 import type { ProductCategory } from "@/types/product";
 
@@ -49,73 +49,53 @@ export function ProductSearch() {
   }, [normalizedQuery]);
 
   return (
-    <section id="product-search" className="container-shell scroll-mt-24 py-6 sm:py-10">
-      <SectionHeading
-        eyebrow="FIND YOUR MATCH"
-        title="جست‌وجوی محصولات"
-        description="محصول، دسته‌بندی یا رنگ دلخواهت را پیدا کن."
-      />
-
-      <div className="max-w-2xl">
+    <section id="product-search" className="container-shell scroll-mt-28 py-4 sm:py-5">
+      <div className="mx-auto max-w-3xl">
         <label
           htmlFor="product-search-input"
-          className="mb-2 block text-sm font-medium text-foreground"
+          className="mb-2 block text-xs font-semibold text-foreground sm:text-sm"
         >
-          دنبال چی می‌گردی؟
+          جست‌وجو در محصولات مون‌شاپ
         </label>
 
         <div className="relative">
           <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-muted">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.7"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="m21 21-4.34-4.34" />
-            </svg>
+            <Icon name="search" size={20} />
           </span>
 
           <input
             id="product-search-input"
             name="product-search"
             type="search"
+            dir="rtl"
             value={query}
             onChange={(event) => setQuery(event.currentTarget.value)}
             placeholder="مثلاً عینک مشکی، بافت یا پیراهن..."
             autoComplete="off"
-            className="min-h-12 w-full rounded-control border border-border bg-surface pr-12 pl-4 text-sm text-foreground outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/15"
+            aria-label="جست‌وجوی نام محصول، دسته‌بندی یا رنگ"
+            className="min-h-12 w-full rounded-control border border-border bg-surface pr-12 pl-4 text-sm text-foreground shadow-sm outline-none transition placeholder:text-muted/80 focus:border-brand focus:ring-2 focus:ring-brand/15"
           />
         </div>
-      </div>
 
-      <div className="mt-5" aria-live="polite" aria-atomic="true">
-        {!normalizedQuery ? (
-          <p className="text-sm leading-7 text-muted">
-            برای شروع، نام محصول، دسته‌بندی یا رنگ را وارد کن.
-          </p>
-        ) : filteredProducts.length === 0 ? (
-          <p className="rounded-card border border-border bg-surface p-5 text-center text-sm leading-7 text-muted">
-            محصولی با این مشخصات پیدا نشد. نام، دسته‌بندی یا رنگ دیگری را امتحان کن.
-          </p>
-        ) : (
-          <>
-            <p className="text-sm text-muted">
-              {filteredProducts.length.toLocaleString("fa-IR")} محصول پیدا شد.
+        {normalizedQuery &&
+          (filteredProducts.length === 0 ? (
+            <p
+              role="status"
+              className="mt-4 rounded-card border border-border bg-surface p-4 text-center text-sm leading-7 text-muted"
+            >
+              محصولی با این مشخصات پیدا نشد. نام، دسته‌بندی یا رنگ دیگری را امتحان کن.
             </p>
+          ) : (
+            <>
+              <p role="status" className="mt-4 text-sm text-muted">
+                {filteredProducts.length.toLocaleString("fa-IR")} محصول پیدا شد.
+              </p>
 
-            <div className="mt-4">
-              <ProductGrid products={filteredProducts} />
-            </div>
-          </>
-        )}
+              <div className="mt-3">
+                <ProductGrid products={filteredProducts} />
+              </div>
+            </>
+          ))}
       </div>
     </section>
   );
