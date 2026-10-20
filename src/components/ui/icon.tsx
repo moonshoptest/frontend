@@ -1,5 +1,6 @@
 import {
   ArrowLeft,
+  Check,
   Glasses,
   Grid2X2,
   House,
@@ -16,6 +17,7 @@ const icons = {
   moon: Moon,
   search: Search,
   bag: ShoppingBag,
+  check: Check,
   home: House,
   grid: Grid2X2,
   "arrow-left": ArrowLeft,

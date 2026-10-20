@@ -42,7 +42,7 @@ const navigationItems: readonly NavigationItem[] = [
   },
 ];
 
-export function MobileBottomNav({ active = "home" }: MobileBottomNavProps) {
+export function MobileBottomNav({ active }: MobileBottomNavProps) {
   return (
     <nav
       aria-label="ناوبری موبایل"
