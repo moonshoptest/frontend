@@ -25,7 +25,7 @@ const navigationItems: readonly NavigationItem[] = [
   {
     key: "categories",
     label: "دسته‌ها",
-    href: "/#categories",
+    href: "/categories",
     icon: "grid",
   },
   {

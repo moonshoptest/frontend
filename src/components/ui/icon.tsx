@@ -6,11 +6,13 @@ import {
   House,
   Layers,
   type LucideIcon,
+  Menu,
   Moon,
   Search,
   Shirt,
   ShoppingBag,
   Sparkles,
+  X,
 } from "lucide-react";
 
 const icons = {
@@ -20,6 +22,8 @@ const icons = {
   check: Check,
   home: House,
   grid: Grid2X2,
+  menu: Menu,
+  close: X,
   "arrow-left": ArrowLeft,
   sparkles: Sparkles,
   sunglasses: Glasses,

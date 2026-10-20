@@ -5,35 +5,9 @@ import { MobileBottomNav } from "@/components/layout/mobile-bottom-nav";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ProductGrid } from "@/components/products/product-grid";
 import { ProductSearch } from "@/components/products/product-search";
-import { Icon, type IconName } from "@/components/ui/icon";
+import { Icon } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { products } from "@/data/products";
-
-const categories: {
-  title: string;
-  description: string;
-  icon: IconName;
-  color: string;
-}[] = [
-  {
-    title: "عینک آفتابی",
-    description: "جزئیاتی برای کامل‌شدن استایل",
-    icon: "sunglasses",
-    color: "bg-[#f1e7de]",
-  },
-  {
-    title: "بافت و پلیور",
-    description: "انتخاب‌های نرم و روزمره",
-    icon: "layers",
-    color: "bg-[#f0e6e9]",
-  },
-  {
-    title: "پیراهن",
-    description: "سادگی با جزئیات ظریف",
-    icon: "shirt",
-    color: "bg-[#e7ece5]",
-  },
-];
 
 const featuredProductIds = [
   "lefties-uv400-01",
@@ -100,7 +74,7 @@ export default function HomePage() {
 
               <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:w-auto sm:flex-row">
                 <Link
-                  href="#categories"
+                  href="/categories"
                   className="inline-flex min-h-12 items-center justify-center gap-2 rounded-control bg-brand px-6 text-sm font-semibold text-white transition-colors hover:bg-brand-hover"
                 >
                   دیدن کالکشن‌ها
@@ -156,45 +130,12 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="categories" className="container-shell py-6 sm:py-10">
-          <SectionHeading
-            eyebrow="EXPLORE MOON SHOP"
-            title="از کجا شروع کنیم؟"
-            description="دسته موردعلاقه‌ات را انتخاب کن."
-          />
-
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
-            {categories.map((category) => (
-              <Link
-                key={category.title}
-                href="#featured-products"
-                className={`group flex min-h-28 items-center justify-between gap-3 rounded-card border border-black/5 p-4 transition-transform duration-200 hover:-translate-y-0.5 sm:min-h-36 sm:p-5 ${category.color}`}
-              >
-                <div>
-                  <h3 className="font-bold text-foreground">{category.title}</h3>
-
-                  <p className="mt-1 text-xs leading-6 text-muted">{category.description}</p>
-
-                  <span className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-brand">
-                    مشاهده محصولات
-                    <Icon name="arrow-left" size={15} />
-                  </span>
-                </div>
-
-                <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-white/70 text-brand transition-transform group-hover:scale-105 sm:size-[68px]">
-                  <Icon name={category.icon} size={30} />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </section>
-
         <section id="featured-products" className="container-shell py-8 sm:py-12">
           <SectionHeading
             eyebrow="SELECTED FOR YOU"
             title="محبوب‌های مون‌شاپ"
             description="نگاهی به انتخاب‌های این مجموعه بینداز."
-            actionHref="#categories"
+            actionHref="/categories"
             actionLabel="کالکشن‌ها"
           />
 
