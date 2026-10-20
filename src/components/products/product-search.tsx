@@ -49,10 +49,7 @@ export function ProductSearch() {
   }, [normalizedQuery]);
 
   return (
-    <section
-      id="product-search"
-      className="container-shell scroll-mt-24 py-6 sm:py-10"
-    >
+    <section id="product-search" className="container-shell scroll-mt-24 py-6 sm:py-10">
       <SectionHeading
         eyebrow="FIND YOUR MATCH"
         title="جست‌وجوی محصولات"
@@ -99,19 +96,14 @@ export function ProductSearch() {
         </div>
       </div>
 
-      <div
-        className="mt-5"
-        aria-live="polite"
-        aria-atomic="true"
-      >
+      <div className="mt-5" aria-live="polite" aria-atomic="true">
         {!normalizedQuery ? (
           <p className="text-sm leading-7 text-muted">
             برای شروع، نام محصول، دسته‌بندی یا رنگ را وارد کن.
           </p>
         ) : filteredProducts.length === 0 ? (
           <p className="rounded-card border border-border bg-surface p-5 text-center text-sm leading-7 text-muted">
-            محصولی با این مشخصات پیدا نشد. نام، دسته‌بندی یا رنگ دیگری را
-            امتحان کن.
+            محصولی با این مشخصات پیدا نشد. نام، دسته‌بندی یا رنگ دیگری را امتحان کن.
           </p>
         ) : (
           <>

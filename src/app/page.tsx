@@ -4,10 +4,10 @@ import { CurrentYear } from "@/components/layout/current-year";
 import { MobileBottomNav } from "@/components/layout/mobile-bottom-nav";
 import { SiteHeader } from "@/components/layout/site-header";
 import { ProductGrid } from "@/components/products/product-grid";
+import { ProductSearch } from "@/components/products/product-search";
 import { Icon, type IconName } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { products } from "@/data/products";
-import { ProductSearch } from "@/components/products/product-search";
 
 const categories: {
   title: string;
