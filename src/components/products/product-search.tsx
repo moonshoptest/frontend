@@ -73,7 +73,7 @@ export function ProductSearch() {
             placeholder="مثلاً عینک مشکی، بافت یا پیراهن..."
             autoComplete="off"
             aria-label="جست‌وجوی نام محصول، دسته‌بندی یا رنگ"
-            className="min-h-12 w-full rounded-control border border-border bg-surface pr-12 pl-4 text-sm text-foreground shadow-sm outline-none transition placeholder:text-muted/80 focus:border-brand focus:ring-2 focus:ring-brand/15"
+            className="min-h-12 w-full rounded-control border border-[#e3deda] bg-surface pr-12 pl-4 text-sm text-foreground shadow-sm outline-none transition placeholder:text-muted/80 focus:border-[#c8c1bb] focus:ring-0 focus-visible:outline-none"
           />
         </div>
 
